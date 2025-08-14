@@ -1,1 +1,13 @@
-<p>menue works!</p>
+<div class="menueWrapper">
+  @if(!selectedCategory){ @for (category of categories; track $index) {
+  <div class="product-button" (click)="openProducts(category)">
+    <p>{{ category }}</p>
+  </div>
+  }} @if(selectedCategory){
+  <div class="product-button" (click)="backToCategories()"></div>
+  @for (product of selectedCategory.products; track $index){
+  <div class="product-button">
+    <p>{{ product.name }}</p>
+  </div>
+  } }
+</div>

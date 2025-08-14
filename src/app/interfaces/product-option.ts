@@ -1,4 +1,3 @@
-export interface ProductOption {
-    name: string;
-  values: string[];
+export interface ProductOption {    
+  name: string;
 }
