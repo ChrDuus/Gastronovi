@@ -1,0 +1,18 @@
+@import '../../styles.scss';
+
+.menue-wrapper{
+    height: 75vh;
+    width: 60vw;
+    @include dFlex(flex, center, center, wrap, 18px)
+}
+.product-button{
+    @include dFlex();
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 60px;
+    >p{
+        margin: 0
+    }
+}

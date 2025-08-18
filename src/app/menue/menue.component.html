@@ -1,4 +1,4 @@
-<div class="menueWrapper">
+<div class="menue-wrapper">
   @if(!selectedCategory){ @for (category of productService.categories; track $index) {
   <div class="product-button" (click)="openProducts(category)">
     <p>{{ category.name }}</p>
