@@ -6,8 +6,18 @@
   }} @if(selectedCategory){
   <div class="product-button" (click)="backToCategories()"></div>
   @for (product of selectedCategory.products; track $index){
-  <div class="product-button">
+  <div class="product-button" (click)="openOptions(product)">
     <p>{{ product.name }}</p>
   </div>
-  } }
+  } } @if(selectedProduct){
+    <div class="product-button" (click)="backToCategories()"></div>
+    @for(options of selectedProduct.options; track $index){
+      <div class="product-button" (click)="addToCart()">
+        <p>{{options.name}}</p>
+        <p>{{options.variant}}</p>
+        <p>{{options.price}}</p>
+      </div>
+    }
+    
+  }
 </div>

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Category } from '../interfaces/category';
+import { Product } from '../interfaces/product';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class MenueComponent {
   
   
   selectedCategory: Category | null = null
+  selectedProduct: Product | null = null
 
   openProducts(category: Category){
     this.selectedCategory = category
@@ -21,6 +23,15 @@ export class MenueComponent {
 
   backToCategories() {
     this.selectedCategory = null;
+  }
+
+  openOptions(product:Product){
+    this.selectedProduct = product
+    
+  }
+
+  addToCart(){
+    
   }
 
 }
