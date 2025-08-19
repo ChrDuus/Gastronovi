@@ -1,1 +1,6 @@
-
+@for (item of orderService.actualOrder; track $index) {
+    <p>{{item.product.name}}</p>
+    <p>{{item.option.name}}</p>
+    <p>{{item.option.price}}</p>
+    <p>{{item.option.variant}}</p>
+}

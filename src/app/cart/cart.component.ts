@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OrderserviceService } from '../services/orderservice.service';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -8,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
 
+  orderService = inject(OrderserviceService)
 }

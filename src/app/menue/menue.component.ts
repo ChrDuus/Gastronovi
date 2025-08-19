@@ -38,10 +38,15 @@ export class MenueComponent {
   }
 
   addToCart(option:ProductOption){
-    let choosenProduct= this.selectedProduct 
-    let choosenOption = option
-    this.orderService.actualOrder?.push(this.selectedProduct, option)
-    console.log(choosenProduct, choosenOption);
+      if (this.selectedProduct) {
+    this.orderService.actualOrder.push({
+      product: this.selectedProduct,
+      option: option,
+      amount: 1
+      
+    });
+  }
+  console.log(this.orderService.actualOrder)
     // this.selectedProduct = null;
     
   }
