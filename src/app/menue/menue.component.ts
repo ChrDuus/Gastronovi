@@ -3,6 +3,7 @@ import { Category } from '../interfaces/category';
 import { Product } from '../interfaces/product';
 import { ProductsService } from '../services/products.service';
 import { ProductOption } from '../interfaces/product-option';
+import { OrderserviceService } from '../services/orderservice.service';
 
 @Component({
   selector: 'app-menue',
@@ -13,6 +14,7 @@ import { ProductOption } from '../interfaces/product-option';
 export class MenueComponent {
 
   productService = inject(ProductsService)
+  orderService = inject(OrderserviceService)
   
   
   selectedCategory: Category | null = null
@@ -36,10 +38,11 @@ export class MenueComponent {
   }
 
   addToCart(option:ProductOption){
-    let choosenProduct= this.selectedProduct
+    let choosenProduct= this.selectedProduct 
     let choosenOption = option
+    this.orderService.actualOrder?.push(this.selectedProduct, option)
     console.log(choosenProduct, choosenOption);
-    this.selectedProduct = null;
+    // this.selectedProduct = null;
     
   }
 
