@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Category } from '../interfaces/category';
 import { Product } from '../interfaces/product';
 import { ProductsService } from '../services/products.service';
+import { ProductOption } from '../interfaces/product-option';
 
 @Component({
   selector: 'app-menue',
@@ -25,12 +26,20 @@ export class MenueComponent {
     this.selectedCategory = null;
   }
 
+  backToProducts(){
+    this.selectedProduct = null;
+  }
+
   openOptions(product:Product){
     this.selectedProduct = product
     
   }
 
-  addToCart(){
+  addToCart(option:ProductOption){
+    let choosenProduct= this.selectedProduct
+    let choosenOption = option
+    console.log(choosenProduct, choosenOption);
+    this.selectedProduct = null;
     
   }
 

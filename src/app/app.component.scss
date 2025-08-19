@@ -1,0 +1,17 @@
+@import '../styles.scss';
+
+section{
+    @include dFlex(flex, row, center, center, nowrap, 15px);
+    width: 100%;
+    
+    >app-menue{
+        padding-left:10%;
+width: 60%;
+height: 80vh;
+}
+
+>app-cart{
+    height: 80vh;
+    width: 30%;
+}
+}

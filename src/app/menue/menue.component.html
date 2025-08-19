@@ -4,18 +4,18 @@
     <p>{{ category.name }}</p>
   </div>
   }} @if(selectedCategory){
-  <div class="product-button" (click)="backToCategories()"></div>
+  <div class="product-button" (click)="backToCategories()">↩</div>
   @for (product of selectedCategory.products; track $index){
   <div class="product-button" (click)="openOptions(product)">
     <p>{{ product.name }}</p>
   </div>
   } } @if(selectedProduct){
-    <div class="product-button" (click)="backToCategories()"></div>
+    <div class="product-button" (click)="backToProducts()">↩</div>
     @for(options of selectedProduct.options; track $index){
-      <div class="product-button" (click)="addToCart()">
+      <div class="product-button" (click)="addToCart(options)">
         <p>{{options.name}}</p>
         <p>{{options.variant}}</p>
-        <p>{{options.price}}</p>
+        <p>{{options.price}}€</p>
       </div>
     }
     

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../interfaces/category';
+import { Product } from '../interfaces/product';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,8 @@ export class ProductsService {
       ]
     }
   ];
+
+  
 
   getCategories(): Category[] {
     return this.categories;
