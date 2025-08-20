@@ -1,4 +1,5 @@
-export interface ProductOption {    
+export interface ProductOption { 
+  id: number;   
   name: string;
   variant: string;
   price:string;

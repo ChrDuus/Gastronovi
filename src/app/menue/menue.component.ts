@@ -39,14 +39,10 @@ export class MenueComponent {
 
   addToCart(option:ProductOption){
       if (this.selectedProduct) {
-    this.orderService.actualOrder.push({
-      product: this.selectedProduct,
-      option: option,
-      amount: 1
-      
-    });
+    this.orderService.addToOrder(this.selectedProduct, option);
   }
-  console.log(this.orderService.actualOrder)
+
+  console.log(this.orderService.actualOrder);
     // this.selectedProduct = null;
     
   }
