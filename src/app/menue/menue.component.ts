@@ -37,14 +37,22 @@ export class MenueComponent {
     
   }
 
-  addToCart(option:ProductOption){
+  addToCartWithOptions(option:ProductOption){
       if (this.selectedProduct) {
     this.orderService.addToOrder(this.selectedProduct, option);
+    }
+    this.selectedProduct = null;    
   }
 
-  console.log(this.orderService.actualOrder);
-    // this.selectedProduct = null;
+  addProductToCart(product:Product){
     
-  }
+    this.selectedProduct = product;
+    
+    if(this.selectedProduct){
+      this.orderService.addToOrder(product);
+    }
+    this.selectedProduct = null;    
+    }
+  
 
 }

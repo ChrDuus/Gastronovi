@@ -12,17 +12,16 @@ export class OrderserviceService {
 
   actualOrder:Order[] = []
 
-  addToOrder(product: Product, option: ProductOption) {
-    // Prüfen, ob das Produkt mit derselben Option schon existiert
+  addToOrder(product: Product, option?: ProductOption) {
     const existingItem = this.actualOrder.find(
-      item => item.product.id === product.id && item.option.id === option.id
+      item =>
+        item.product.id === product.id &&
+        (item.option?.id ?? null) === (option?.id ?? null)
     );
 
     if (existingItem) {
-      // Falls vorhanden → Menge erhöhen
       existingItem.amount++;
     } else {
-      // Falls nicht vorhanden → neues Item anlegen
       this.actualOrder.push({
         product,
         option,
@@ -30,4 +29,17 @@ export class OrderserviceService {
       });
     }
   }
+
+    getTotalPrice(){
+      let price = 0
+      this.actualOrder.forEach(product =>{
+        if(!product.option && product.product.price){
+         price += product.amount * product.product.price         
+        }else if(product.option){
+          price += product.amount * product.option.price
+        }
+      })
+      return price
+    }
+
 }

@@ -5,7 +5,7 @@ import { ProductOption } from "./product-option"
     export interface Order {
 
     product: Product;
-    option: ProductOption;
+    option?: ProductOption;
     amount: number;
    
 }

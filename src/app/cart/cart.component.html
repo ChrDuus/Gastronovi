@@ -1,6 +1,15 @@
 @for (item of orderService.actualOrder; track $index) {
     <p>{{item.product.name}}</p>
-    <p>{{item.option.name}}</p>
-    <p>{{item.option.price}}</p>
-    <p>{{item.option.variant}}</p>
+    @if(!item.product.options){
+        <p>{{item.product.size}}</p>
+        <p>{{item.product.price}}</p>
+        <p>{{item.amount}}</p>
+    }@else{
+    <p>{{item.option?.name}}</p>
+    <p>{{item.option?.price}}</p>
+    <p>{{item.option?.variant}}</p>
+    <p>{{item.amount}}</p>
+    }
 }
+
+<p>Total: {{this.orderService.getTotalPrice()}}€</p>
