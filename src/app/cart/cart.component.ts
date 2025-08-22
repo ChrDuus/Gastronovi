@@ -15,5 +15,8 @@ export class CartComponent {
 
   changeAmount(index:number, direction:number){
     this.orderService.actualOrder[index].amount += direction
+    if(this.orderService.actualOrder[index].amount <= 0){
+      this.orderService.actualOrder.splice(index, 1)
+    }
 }
 }

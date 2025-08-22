@@ -19,6 +19,7 @@ export class MenueComponent {
   
   selectedCategory: Category | null = null
   selectedProduct: Product | null = null
+  optionsOpen: boolean = false
 
   openProducts(category: Category){
     this.selectedCategory = category
@@ -33,7 +34,9 @@ export class MenueComponent {
   }
 
   openOptions(product:Product){
+    this.optionsOpen= true
     this.selectedProduct = product
+    
     
     
   }
@@ -42,7 +45,8 @@ export class MenueComponent {
       if (this.selectedProduct) {
     this.orderService.addToOrder(this.selectedProduct, option);
     }
-    this.selectedProduct = null;    
+    this.selectedProduct = null;  
+    this.optionsOpen = false  
   }
 
   addProductToCart(product:Product){

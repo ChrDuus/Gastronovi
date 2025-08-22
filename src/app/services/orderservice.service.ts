@@ -30,6 +30,14 @@ export class OrderserviceService {
     }
   }
 
+  getPricePerProduct(singlePrice:number | undefined, index:number){
+    let price = 0
+    if(singlePrice){
+     price = singlePrice * this.actualOrder[index].amount
+    }
+    return price
+  }
+
     getTotalPrice(){
       let price = 0
       this.actualOrder.forEach(product =>{

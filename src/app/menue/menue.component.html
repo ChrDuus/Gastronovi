@@ -1,9 +1,10 @@
 <div class="menue-wrapper">
-  @if(!selectedCategory){ @for (category of productService.categories; track $index) {
+  @if(!selectedCategory){
+     @for (category of productService.categories; track $index) {
   <div class="product-button" (click)="openProducts(category)">
     <p>{{ category.name }}</p>
   </div>
-  }} @if(selectedCategory){
+  }} @if(selectedCategory && !optionsOpen){
   <div class="product-button" (click)="backToCategories()">↩</div>
   @for (product of selectedCategory.products; track $index){
     @if(product.options){

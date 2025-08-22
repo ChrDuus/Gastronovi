@@ -3,7 +3,7 @@
 .menue-wrapper{
     height: 75vh;
     width: 60vw;
-    @include dFlex(flex, center, center, wrap, 18px)
+    @include dFlex(flex, flex-start, flex-start, wrap, 18px)
 }
 .product-button{
     @include dFlex(flex, column, center, center, wrap, 5px );

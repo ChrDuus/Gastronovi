@@ -6,7 +6,7 @@
         <p class="name">{{ item.product.name }}</p>
         @if(!item.product.options){
         <p class="size">{{ item.product.size }}</p>
-        <p class="price">{{ item.product.price }} €</p>
+        <p class="price">{{ orderService.getPricePerProduct(item.product.price, $index) }} €</p>
         <div class="amount-div">
           <button (click)="changeAmount($index, -1)">-</button>
           <p class="amount">{{ item.amount }}</p>
