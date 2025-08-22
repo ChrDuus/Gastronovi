@@ -39,7 +39,8 @@ export class OrderserviceService {
           price += product.amount * product.option.price
         }
       })
-      return price
+      
+      return price.toFixed(2)
     }
 
 }

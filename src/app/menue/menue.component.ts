@@ -35,6 +35,7 @@ export class MenueComponent {
   openOptions(product:Product){
     this.selectedProduct = product
     
+    
   }
 
   addToCartWithOptions(option:ProductOption){

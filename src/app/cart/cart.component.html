@@ -1,26 +1,32 @@
 <section>
   <div class="cart-wrapper">
-    @for (item of orderService.actualOrder; track $index) {
-    <div class="item-div">
-      <p class="name">{{ item.product.name }}</p>
-      @if(!item.product.options){
-      <p class="size">{{ item.product.size }}</p>
-      <p class="price">{{ item.product.price }} €</p>
-      <div class="amount-div">
-        <button (click)="changeAmount($index, +1)">+</button>
-        <p class="amount">{{ item.amount }}</p>
-        <button (click)="changeAmount($index, -1)">-</button>
+    <div class="order">
+      @for (item of orderService.actualOrder; track $index) {
+      <div class="item-div">
+        <p class="name">{{ item.product.name }}</p>
+        @if(!item.product.options){
+        <p class="size">{{ item.product.size }}</p>
+        <p class="price">{{ item.product.price }} €</p>
+        <div class="amount-div">
+          <button (click)="changeAmount($index, -1)">-</button>
+          <p class="amount">{{ item.amount }}</p>
+          <button (click)="changeAmount($index, +1)">+</button>
+        </div>
+
+        }@else{
+        <p class="option-name">{{ item.option?.name }}</p>
+        <p class="price">{{ item.option?.price }} €</p>
+        <p class="size">{{ item.option?.variant }}</p>
+        <div class="amount-div">
+          <button (click)="changeAmount($index, -1)">-</button>
+          <p class="amount">{{ item.amount }}</p>
+          <button (click)="changeAmount($index, +1)">+</button>
+        </div>
+
+        }
       </div>
-
-      }@else{
-      <p class="option-name">{{ item.option?.name }}</p>
-      <p class="price">{{ item.option?.price }} €</p>
-      <p class="size">{{ item.option?.variant }}</p>
-      <p class="amount">{{ item.amount }}</p>
-
       }
     </div>
-    }
     <div class="payment-div">
       <p class="total-price">
         Total: {{ this.orderService.getTotalPrice() }} €
