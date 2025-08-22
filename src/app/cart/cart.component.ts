@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OrderserviceService } from '../services/orderservice.service';
 import { inject } from '@angular/core';
+import { Order } from '../interfaces/order';
 
 @Component({
   selector: 'app-cart',
@@ -11,4 +12,8 @@ import { inject } from '@angular/core';
 export class CartComponent {
 
   orderService = inject(OrderserviceService)
+
+  changeAmount(index:number, direction:number){
+    this.orderService.actualOrder[index].amount += direction
+}
 }
