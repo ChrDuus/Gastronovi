@@ -31,7 +31,17 @@
       <p class="total-price">
         Total: {{ this.orderService.getTotalPrice() }} €
       </p>
-      <button class="pay-button">PAY</button>
+      @if(!this.orderService.checkingOrder()){
+        <button
+          class="pay-button"
+          [disabled]="orderService.actualOrder.length < 1"
+          (click)="checkOrder()">Check Order
+        </button>
+      }@else if(this.orderService.checkingOrder()){
+        <button class="pay-button" (click)="openCalculator()">Pay</button>
+      }
+      
+      
     </div>
   </div>
 </section>

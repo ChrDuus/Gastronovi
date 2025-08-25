@@ -1,4 +1,7 @@
 <section>
     <app-menue></app-menue>
+    @if(this.orderService.calculatorOpen()){
+    <app-calculator></app-calculator>
+    }
     <app-cart></app-cart>
 </section>

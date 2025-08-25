@@ -40,7 +40,9 @@ export class CalculatorComponent {
     }
   }
 
-  close() {
+  continuePayment() {
+    this.orderService.calculatorOpen.set(false)
+    this.orderService.choosePaymentMethod.set(true)
   }
 
 

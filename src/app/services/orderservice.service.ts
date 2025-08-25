@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ProductOption } from '../interfaces/product-option';
 import { Product } from '../interfaces/product';
 import { Order } from '../interfaces/order';
+import { signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ import { Order } from '../interfaces/order';
 export class OrderserviceService {
 
   constructor() { }
+
+  checkingOrder= signal<boolean>(false)
+  calculatorOpen = signal<boolean>(false)
+  choosePaymentMethod = signal<boolean>(false)
 
   actualOrder:Order[] = []
 

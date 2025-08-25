@@ -3,6 +3,7 @@ import { OrderserviceService } from '../services/orderservice.service';
 import { inject } from '@angular/core';
 import { Order } from '../interfaces/order';
 
+
 @Component({
   selector: 'app-cart',
   imports: [],
@@ -18,5 +19,14 @@ export class CartComponent {
     if(this.orderService.actualOrder[index].amount <= 0){
       this.orderService.actualOrder.splice(index, 1)
     }
+}
+
+checkOrder(){
+  this.orderService.checkingOrder.set(true)
+  
+}
+
+openCalculator(){
+  this.orderService.calculatorOpen.set(true)
 }
 }

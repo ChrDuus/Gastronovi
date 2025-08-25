@@ -4,7 +4,7 @@
 
     <div class="display">
       <span>Given: {{ givenAmount() }} €</span>
-      <span>Receive: {{ change() }} €</span>
+      <span>Change: {{ change() }} €</span>
     </div>
 
     <div class="buttons">
@@ -19,6 +19,6 @@
   <button class="clear" (click)="clear()">C</button>
 </div>
 
-    <button class="close" (click)="close()">Close</button>
+    <button class="close" (click)="continuePayment()">Close</button>
   </div>
 </div>
