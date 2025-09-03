@@ -23,6 +23,8 @@ export class CartComponent {
 
 checkOrder(){
   this.orderService.checkingOrder.set(true)
+  this.orderService.choosePaymentMethod.set(true)
+
   
 }
 

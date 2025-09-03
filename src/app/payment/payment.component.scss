@@ -1,0 +1,9 @@
+@import '../../styles.scss';
+
+.payment-wrapper{
+     @include dFlex(flex, column, center, center, nowrap, 25px);
+}
+
+.input-wrapper{
+    @include dFlex(flex, row, center, center, nowrap, 25px);
+}

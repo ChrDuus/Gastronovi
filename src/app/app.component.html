@@ -1,7 +1,15 @@
 <section>
+  <div class="menue-area">
+    @if(!this.orderService.checkingOrder()){
     <app-menue></app-menue>
-    @if(this.orderService.calculatorOpen()){
-    <app-calculator></app-calculator>
+    } @else if(this.orderService.checkingOrder()){
+    <app-payment></app-payment>
     }
+  </div>
+  @if(this.orderService.calculatorOpen()){
+  <app-calculator></app-calculator>
+  }
+  
     <app-cart></app-cart>
+  
 </section>

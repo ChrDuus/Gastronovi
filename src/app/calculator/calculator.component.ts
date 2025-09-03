@@ -14,7 +14,7 @@ export class CalculatorComponent {
   orderService = inject(OrderserviceService)
 
   totalPrice = signal<number>(0);
-  givenAmount = signal<string>(''); 
+  givenAmount = signal<string>('0'); 
   change = signal<number>(0);
 
   ngOnInit() {
@@ -42,7 +42,6 @@ export class CalculatorComponent {
 
   continuePayment() {
     this.orderService.calculatorOpen.set(false)
-    this.orderService.choosePaymentMethod.set(true)
   }
 
 

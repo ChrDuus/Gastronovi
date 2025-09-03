@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenueComponent } from './menue/menue.component';
 import { CartComponent } from './cart/cart.component';
-import { CalculatorComponent } from './calculator/calculator.component';
 import { OrderserviceService } from './services/orderservice.service';
 import { inject } from '@angular/core';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ MenueComponent, CartComponent, CalculatorComponent],
+  imports: [ MenueComponent, CartComponent, CalculatorComponent, PaymentComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
