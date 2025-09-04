@@ -56,4 +56,10 @@ export class OrderserviceService {
       return parseFloat(price.toFixed(2));
     }
 
+
+  safeOrder(){
+     let orderToSafe = this.actualOrder
+
+     this.actualOrder = []
+  }
 }
