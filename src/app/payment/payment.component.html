@@ -1,10 +1,20 @@
 <div class="payment-wrapper">
     <div class="cash input-wrapper">
-        <input type="radio" name="paymentMethod" id="Cash">
+        <input type="radio"
+         name="paymentMethod"
+          id="Cash"
+          value="Cash"
+          (change)="setPaymentMethod('Cash')"
+          >
         <label for="Cash">Cash</label>    
     </div>
     <div class="card input-wrapper">
-        <input type="radio" name="paymentMethod" id="Card">
+        <input type="radio"
+         name="paymentMethod"
+          id="Card"
+          value="Card"
+          (change)="setPaymentMethod('Card')"
+          >
         <label for="Card">Card</label>    
     </div>
 </div>

@@ -1,33 +1,34 @@
-@import '../styles.scss';
+@import "../styles.scss";
 
-section{
-    @include dFlex(flex, row, center, flex-end, nowrap, 15px);
+section {
+  @include dFlex(flex, row, center, flex-end, nowrap, 15px);
+  width: 100%;
+
+  background-color: beige;
+  > .menue-area {
+    @include dFlex(flex, column, center, center, nowrap, 15px);
     width: 100%;
-    
-    background-color: beige;
-    >.menue-area{
-        @include dFlex(flex, column, center, center, nowrap, 15px);
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        padding: 20px;
-    }
-    
-    >app-menue{
-        padding-left:10%;
-        width: 60%;
-        height: 100%;
-    }
-    >app-payment{
-        padding-left:10%;
-        width: 60%;
-        height: 80vh;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+
+    > app-menue {
+      padding-left: 10%;
+      width: 60%;
+      height: 100%;
     }
 
-    >app-cart{
-        padding-left: 20px;
-        height: 99vh;
-        width: 30%;
-        background-color:beige;
+    > app-payment {
+      @include dFlex(flex, column, center, center, nowrap, 15px);
+      padding-left: 10%;
+      min-width: 60%;
+      height: 80vh;
     }
+  }
+  > app-cart {
+    padding-left: 20px;
+    height: 99vh;
+    width: 40%;
+    background-color: beige;
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PaymentService } from '../services/payment.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './payment.component.scss'
 })
 export class PaymentComponent {
+  paymentService = inject(PaymentService)
+
+  setPaymentMethod(method: string){
+    this.paymentService.setPaymentMethod(method)
+  }
 
 }

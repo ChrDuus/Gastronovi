@@ -38,7 +38,7 @@
           (click)="checkOrder()">Check Order
         </button>
       }@else if(this.orderService.checkingOrder()){
-        <button class="pay-button" (click)="openCalculator()">Pay</button>
+        <button class="pay-button" [disabled]="!paymentService.chosenPaymentMethod()" (click)="openCalculator()">Pay</button>
       }
       
       

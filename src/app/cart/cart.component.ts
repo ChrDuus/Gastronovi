@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OrderserviceService } from '../services/orderservice.service';
+import { PaymentService } from '../services/payment.service';
 import { inject } from '@angular/core';
 import { Order } from '../interfaces/order';
 
@@ -13,6 +14,7 @@ import { Order } from '../interfaces/order';
 export class CartComponent {
 
   orderService = inject(OrderserviceService)
+  paymentService = inject(PaymentService)
 
   changeAmount(index:number, direction:number){
     this.orderService.actualOrder[index].amount += direction
