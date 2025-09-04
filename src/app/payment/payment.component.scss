@@ -2,8 +2,11 @@
 
 .payment-wrapper{
      @include dFlex(flex, column, center, center, nowrap, 25px);
+     min-width: 80%;
 }
 
 .input-wrapper{
-    @include dFlex(flex, row, center, center, nowrap, 25px);
+    @include dFlex(flex, row-reverse, center, space-between, nowrap, 25px);
+    min-width: 80%;
+    background-color: grey;
 }

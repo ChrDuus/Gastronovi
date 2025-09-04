@@ -15,7 +15,7 @@
 
         }@else{
         <p class="option-name">{{ item.option?.name }}</p>
-        <p class="price">{{ item.option?.price }} €</p>
+        <p class="price">{{ orderService.getPricePerProduct(item.option?.price, $index) }} €</p>
         <p class="size">{{ item.option?.variant }}</p>
         <div class="amount-div">
           <button (click)="changeAmount($index, -1)">-</button>

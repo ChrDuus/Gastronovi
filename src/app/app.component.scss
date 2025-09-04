@@ -3,6 +3,7 @@
 section{
     @include dFlex(flex, row, center, flex-end, nowrap, 15px);
     width: 100%;
+    
     background-color: beige;
     >.menue-area{
         @include dFlex(flex, column, center, center, nowrap, 15px);
@@ -15,7 +16,7 @@ section{
     >app-menue{
         padding-left:10%;
         width: 60%;
-        height: 80vh;
+        height: 100%;
     }
     >app-payment{
         padding-left:10%;
