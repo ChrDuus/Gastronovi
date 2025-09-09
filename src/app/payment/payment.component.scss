@@ -16,6 +16,10 @@
     input[type="radio"] {
         -ms-transform: scale(1.5); 
         -webkit-transform: scale(1.5); 
-        transform: scale(1.5);
-}
+        transform: scale(1.5);       
+    }
+    >.radio-wrapper{
+        width: 100%;
+            @include dFlex(flex, row-reverse, center, space-between, nowrap, 25px);
+        }
 }

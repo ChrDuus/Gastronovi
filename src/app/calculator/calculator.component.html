@@ -1,11 +1,11 @@
 <div class="overlay">
   <div class="calculator">
     <p class="close-button" (click)="closeCalculator()">⨉</p>
-    <h2>To pay: {{ totalPrice()}} €</h2>
+    <h2>To pay: {{ totalPrice().toFixed(2)}} €</h2>
 
     <div class="display">
       <span>Given: {{ givenAmount() }} €</span>
-      <span>Change: {{ change() }} €</span>
+      <span>Change: {{ change().toFixed(2) }} €</span>
     </div>
 
     <div class="buttons">

@@ -43,6 +43,7 @@ export class CalculatorComponent {
   continuePayment() {
     this.orderService.calculatorOpen.set(false)
     this.orderService.safeOrder()
+    this.orderService.checkingOrder.set(false)
   }
 
   closeCalculator(){

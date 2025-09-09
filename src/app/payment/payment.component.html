@@ -1,20 +1,27 @@
 <div class="payment-wrapper">
-    <div class="cash input-wrapper">
-        <input type="radio"
-         name="paymentMethod"
-          id="Cash"
-          value="Cash"
-          (change)="setPaymentMethod('Cash')"
-          >
-        <label for="Cash">Cash</label>    
+  <label for="Cash" class="input-wrapper">
+    <div class="radio-wrapper">
+      <input
+        type="radio"
+        name="paymentMethod"
+        id="Cash"
+        value="Cash"
+        (change)="setPaymentMethod('Cash')"
+      />
+      <span>Cash</span>
     </div>
-    <div class="card input-wrapper">
-        <input type="radio"
-         name="paymentMethod"
-          id="Card"
-          value="Card"
-          (change)="setPaymentMethod('Card')"
-          >
-        <label for="Card">Card</label>    
+  </label>
+
+  <label for="Card" class="input-wrapper">
+    <div class="radio-wrapper">
+      <input
+        type="radio"
+        name="paymentMethod"
+        id="Card"
+        value="Card"
+        (change)="setPaymentMethod('Card')"
+      />
+      <span> Card</span>
     </div>
+  </label>
 </div>
